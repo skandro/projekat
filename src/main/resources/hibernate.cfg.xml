@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/project?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Skandro1981.</property>
+        <property name="companies_sql">true</property>
+        <property name="employees_sql">true</property>
+        <mapping resource="entity/Company.hbm.xml" class="com.IMCONSALTING.company.Company"/>
+        <mapping resource="entity/Employee.hbm.xml" class="com.IMCONSALTING.employee.Employee"/>
+        <mapping resource="entity/Profession.hbm.xml" class="com.IMCONSALTING.profession.Profession"/>
+        <mapping resource="entity/Customer.hbm.xml" class="com.IMCONSALTING.customer.Customer"/>
+    </session-factory>
+</hibernate-configuration>

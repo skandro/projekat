@@ -1,11 +1,11 @@
 package com.IMCONSALTING;
 
-import com.IMCONSALTING.hibernate.SessionFactoryUtil;
-import com.IMCONSALTING.prfession.Profession;
-import org.hibernate.Query;
-import org.hibernate.Session;
+import com.IMCONSALTING.company.Company;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.Query;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Demo {
@@ -20,25 +20,22 @@ public class Demo {
         customer.setSurname("Stanic");
         customer.setMobile("061 123456");
         customer.setDateRegistry(LocalDate.of(2023,1,1));
-
         Employee employee =new Employee();
         employee.setId(1);
         employee.setName("mirsad");
         employee.setSurname("Skandro");
-
         customer.setEmployee(employee);
-
-
         System.out.println(customer.getEmployee().getName());*/
 
-        Session session= SessionFactoryUtil.getSessionFactory().openSession();
 
-        session.getTransaction().begin();
-        List<Profession> customers=new ArrayList<>();
-        Query query=session.createQuery("from Profession");
-        customers=query.list();
-        session.getTransaction().commit();
-        customers.forEach(System.out::println);
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("projectPU");
+        System.out.println("ddddd");
+        EntityManager manager = emf.createEntityManager();
+        manager.getTransaction().begin();
+        Query query = manager.createNamedQuery("Company.findAll");
+        List<Company> list = query.getResultList();
+        manager.getTransaction().commit();
+        list.forEach(System.out::println);
 
     }
 }

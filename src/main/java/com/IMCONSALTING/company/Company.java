@@ -6,23 +6,19 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table (name="companies",catalog = "project") // companies je naziv tabele u bazi, project je ime baze
-@NamedQueries(
-        {
-                @NamedQuery(name = "Company.findAll", query = "SELECT c FROM Company c")
-        }
-)
-
+@Table(name = "companies", catalog = "project") // companies je naziv tabele u bazi, project je ime baze
+//@NamedQueries({@NamedQuery(name = "upit", query = "SELECT c FROM Company c")})
 public class Company implements Serializable {
 
     @Id
-    @Column (name="id_company")
+    @Column(name = "id_company")
     private int id;
     private String name;
     private String address;
     private String contact;
 
-    public Company(){}
+    public Company() {
+    }
 
     public int getId() {
         return id;

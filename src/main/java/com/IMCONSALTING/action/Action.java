@@ -1,9 +1,10 @@
 package com.IMCONSALTING.action;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Action {
+public class Action implements Serializable {
     private int id;
     private LocalDate date;
     private int id_customer;

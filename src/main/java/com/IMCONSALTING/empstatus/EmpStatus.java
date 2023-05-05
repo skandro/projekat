@@ -1,8 +1,9 @@
 package com.IMCONSALTING.empstatus;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class EmpStatus {
+public class EmpStatus implements Serializable {
     private int idEmpStatus;
     private String name;
 

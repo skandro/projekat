@@ -1,6 +1,8 @@
 package com.IMCONSALTING;
 
 import com.IMCONSALTING.company.Company;
+import com.IMCONSALTING.employee.Employee;
+import com.IMCONSALTING.profession.Profession;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -29,13 +31,25 @@ public class Demo {
 
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("projectPU");
-        System.out.println("ddddd");
         EntityManager manager = emf.createEntityManager();
         manager.getTransaction().begin();
-        Query query = manager.createNamedQuery("Company.findAll");
+        Query query = manager.createQuery("SELECT c FROM Company c");
         List<Company> list = query.getResultList();
         manager.getTransaction().commit();
         list.forEach(System.out::println);
 
+
+
+        manager.getTransaction().begin();
+        Query query1 = manager.createQuery("SELECT p FROM Profession p");
+        List<Profession> list1 = query1.getResultList();
+        manager.getTransaction().commit();
+        list1.forEach(System.out::println);
+
+        manager.getTransaction().begin();
+        Query query2 = manager.createQuery("SELECT e FROM Employee e");
+        List<Employee> list2 = query2.getResultList();
+        manager.getTransaction().commit();
+        list2.forEach(System.out::println);
     }
 }

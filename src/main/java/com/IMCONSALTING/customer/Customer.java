@@ -4,7 +4,7 @@ package com.IMCONSALTING.customer;
 import com.IMCONSALTING.company.Company;
 import com.IMCONSALTING.employee.Employee;
 import com.IMCONSALTING.empstatus.EmpStatus;
-import com.IMCONSALTING.prfession.Profession;
+import com.IMCONSALTING.profession.Profession;
 
 import java.io.Serializable;
 import java.time.LocalDate;

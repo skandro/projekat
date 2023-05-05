@@ -1,8 +1,9 @@
 package com.IMCONSALTING.channel;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Channel {
+public class Channel implements Serializable {
     private int id;
     private String name;
 

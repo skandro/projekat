@@ -1,8 +1,9 @@
 package com.IMCONSALTING.response;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Response {
+public class Response implements Serializable {
     private int id;
     private String name;
 

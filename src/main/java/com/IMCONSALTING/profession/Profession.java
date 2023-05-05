@@ -1,8 +1,18 @@
-package com.IMCONSALTING.prfession;
+package com.IMCONSALTING.profession;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Profession {
+@Entity
+@Table(name = "profession", catalog = "project")
+public class Profession implements Serializable {
+    @Id
+    @Column(name="id_profession")
     private int id;
     private String name;
 

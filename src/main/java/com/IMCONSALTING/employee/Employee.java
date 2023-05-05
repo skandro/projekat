@@ -1,8 +1,18 @@
 package com.IMCONSALTING.employee;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Employee {
+@Entity
+@Table(name = "employees", catalog = "project")
+public class Employee implements Serializable {
+    @Id
+    @Column(name="id_employee")
     private int id;
     private String name;
     private String surname;

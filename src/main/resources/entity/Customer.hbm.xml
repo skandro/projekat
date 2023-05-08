@@ -26,7 +26,5 @@
         <property name="email" type="string">
             <column name="email" not-null="true" length="45"/>
         </property>
-
-
     </class>
 </hibernate-mapping>

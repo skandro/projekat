@@ -1,6 +1,7 @@
 package com.IMCONSALTING;
 
 import com.IMCONSALTING.company.Company;
+import com.IMCONSALTING.customer.Customer;
 import com.IMCONSALTING.employee.Employee;
 import com.IMCONSALTING.profession.Profession;
 import jakarta.persistence.EntityManager;
@@ -39,7 +40,6 @@ public class Demo {
         list.forEach(System.out::println);
 
 
-
         manager.getTransaction().begin();
         Query query1 = manager.createQuery("SELECT p FROM Profession p");
         List<Profession> list1 = query1.getResultList();
@@ -51,5 +51,13 @@ public class Demo {
         List<Employee> list2 = query2.getResultList();
         manager.getTransaction().commit();
         list2.forEach(System.out::println);
+
+        System.out.println("-------------------------------");
+
+        manager.getTransaction().begin();
+        Query query3 = manager.createQuery("SELECT c FROM Customer c");
+        List<Customer> list3 = query3.getResultList();
+        manager.getTransaction().commit();
+        list3.forEach(System.out::println);
     }
 }

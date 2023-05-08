@@ -12,12 +12,13 @@ import java.util.Objects;
 @Table(name = "employees", catalog = "project")
 public class Employee implements Serializable {
     @Id
-    @Column(name="id_employee")
+    @Column(name = "id_employee")
     private int id;
     private String name;
     private String surname;
 
-    public Employee(){}
+    public Employee() {
+    }
 
     public int getId() {
         return id;

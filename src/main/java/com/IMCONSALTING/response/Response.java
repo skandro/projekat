@@ -7,7 +7,8 @@ public class Response implements Serializable {
     private int id;
     private String name;
 
-    public  Response(){}
+    public Response() {
+    }
 
     public int getId() {
         return id;

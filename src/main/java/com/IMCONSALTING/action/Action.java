@@ -13,7 +13,8 @@ public class Action implements Serializable {
     private int id_response;
     private String desription;
 
-    public Action(){}
+    public Action() {
+    }
 
     public int getId() {
         return id;

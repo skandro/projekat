@@ -7,7 +7,7 @@
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/project?zeroDateTimeBehavior=convertToNull</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">Skandro1981.</property>
+        <property name="hibernate.connection.password">root</property>
         <property name="companies_sql">true</property>
         <property name="employees_sql">true</property>
         <mapping resource="entity/Company.hbm.xml" class="com.IMCONSALTING.company.Company"/>

@@ -7,7 +7,8 @@ public class EmpStatus implements Serializable {
     private int idEmpStatus;
     private String name;
 
-    public EmpStatus(){}
+    public EmpStatus() {
+    }
 
     public int getIdEmpStatus() {
         return idEmpStatus;

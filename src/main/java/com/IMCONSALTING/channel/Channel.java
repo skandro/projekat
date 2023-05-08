@@ -7,7 +7,8 @@ public class Channel implements Serializable {
     private int id;
     private String name;
 
-    public Channel(){}
+    public Channel() {
+    }
 
     public int getId() {
         return id;

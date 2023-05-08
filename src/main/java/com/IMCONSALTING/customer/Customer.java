@@ -1,28 +1,56 @@
 package com.IMCONSALTING.customer;
 
-
+import com.IMCONSALTING.Convertors.*;
 import com.IMCONSALTING.company.Company;
 import com.IMCONSALTING.employee.Employee;
 import com.IMCONSALTING.empstatus.EmpStatus;
 import com.IMCONSALTING.profession.Profession;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
+@Table(name = "customers", catalog = "project")
 public class Customer implements Serializable {
-
+    @Id
+    @Column(name = "id_customer")
+    @Basic(optional = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Basic(optional = false)
     private String name;
+    @Basic(optional = false)
     private String surname;
+    @Convert(converter = DateConverter.class)
+    @Basic(optional = false)
+    @Column(name = "birthday")
     private LocalDate birthday;
+    @Basic(optional = false)
     private String address;
+    @Basic(optional = false)
     private String email;
+    @Basic(optional = false)
     private String mobile;
+    @Basic(optional = false)
+    @Convert(converter = EmpStatusConverter.class)
+    @Column(name = "id_empstatus")
     private EmpStatus empStatus;
+    @Basic(optional = false)
+    @Convert(converter = ProfessionConverter.class)
+    @Column(name = "id_profession")
     private Profession profession;
+    @Convert(converter = CompanyConverter.class)
+    @Column(name = "id_company")
     private Company company;
+    @Basic(optional = false)
+    @Convert(converter = EmployeeConverter.class)
+    @Column(name = "id_employee")
     private Employee employee;
+    @Basic(optional = false)
+    @Convert(converter = DateConverter.class)
+    @Column(name = "date_registry")
     private LocalDate dateRegistry;
 
     public Customer() {
@@ -84,7 +112,6 @@ public class Customer implements Serializable {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
-
 
 
     public LocalDate getDateRegistry() {
@@ -158,4 +185,3 @@ public class Customer implements Serializable {
                 '}';
     }
 }
-

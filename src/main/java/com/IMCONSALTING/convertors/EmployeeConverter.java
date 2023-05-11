@@ -1,4 +1,4 @@
-package com.IMCONSALTING.Convertors;
+package com.IMCONSALTING.convertors;
 
 import com.IMCONSALTING.employee.Employee;
 import jakarta.persistence.*;

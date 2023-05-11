@@ -1,4 +1,4 @@
-package com.IMCONSALTING.Convertors;
+package com.IMCONSALTING.convertors;
 
 import com.IMCONSALTING.empstatus.EmpStatus1;
 import jakarta.persistence.AttributeConverter;

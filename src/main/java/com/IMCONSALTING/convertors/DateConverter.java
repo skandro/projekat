@@ -1,4 +1,4 @@
-package com.IMCONSALTING.Convertors;
+package com.IMCONSALTING.convertors;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

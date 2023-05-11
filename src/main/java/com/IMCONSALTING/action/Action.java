@@ -11,7 +11,7 @@ public class Action implements Serializable {
     private int id_employee;
     private int id_channel;
     private int id_response;
-    private String desription;
+    private String description;
 
     public Action() {
     }
@@ -64,12 +64,12 @@ public class Action implements Serializable {
         this.id_response = id_response;
     }
 
-    public String getDesription() {
-        return desription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesription(String desription) {
-        this.desription = desription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -77,12 +77,12 @@ public class Action implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Action action = (Action) o;
-        return id == action.id && id_customer == action.id_customer && id_employee == action.id_employee && id_channel == action.id_channel && id_response == action.id_response && Objects.equals(date, action.date) && Objects.equals(desription, action.desription);
+        return id == action.id && id_customer == action.id_customer && id_employee == action.id_employee && id_channel == action.id_channel && id_response == action.id_response && Objects.equals(date, action.date) && Objects.equals(description, action.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, date, id_customer, id_employee, id_channel, id_response, desription);
+        return Objects.hash(id, date, id_customer, id_employee, id_channel, id_response, description);
     }
 
     @Override
@@ -94,7 +94,7 @@ public class Action implements Serializable {
                 ", id_employee=" + id_employee +
                 ", id_channel=" + id_channel +
                 ", id_response=" + id_response +
-                ", desription='" + desription + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

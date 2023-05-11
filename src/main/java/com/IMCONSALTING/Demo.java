@@ -30,34 +30,31 @@ public class Demo {
         customer.setEmployee(employee);
         System.out.println(customer.getEmployee().getName());*/
 
-
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("projectPU");
         EntityManager manager = emf.createEntityManager();
-        manager.getTransaction().begin();
-        Query query = manager.createQuery("SELECT c FROM Company c");
-        List<Company> list = query.getResultList();
-        manager.getTransaction().commit();
-        list.forEach(System.out::println);
-
 
         manager.getTransaction().begin();
-        Query query1 = manager.createQuery("SELECT p FROM Profession p");
-        List<Profession> list1 = query1.getResultList();
+        Query companyListQuery = manager.createQuery("SELECT c FROM Company c");
+        List<Company> companyList = companyListQuery.getResultList();
         manager.getTransaction().commit();
-        list1.forEach(System.out::println);
+        companyList.forEach(System.out::println);
 
         manager.getTransaction().begin();
-        Query query2 = manager.createQuery("SELECT e FROM Employee e");
-        List<Employee> list2 = query2.getResultList();
+        Query professionListQuery = manager.createQuery("SELECT p FROM Profession p");
+        List<Profession> professionList = professionListQuery.getResultList();
         manager.getTransaction().commit();
-        list2.forEach(System.out::println);
-
-        System.out.println("-------------------------------");
+        professionList.forEach(System.out::println);
 
         manager.getTransaction().begin();
-        Query query3 = manager.createQuery("SELECT c FROM Customer c");
-        List<Customer> list3 = query3.getResultList();
+        Query employeeListQuery = manager.createQuery("SELECT e FROM Employee e");
+        List<Employee> employeeList = employeeListQuery.getResultList();
         manager.getTransaction().commit();
-        list3.forEach(System.out::println);
+        employeeList.forEach(System.out::println);
+
+        manager.getTransaction().begin();
+        Query customerListQuery = manager.createQuery("SELECT c FROM Customer c");
+        List<Customer> customerList = customerListQuery.getResultList();
+        manager.getTransaction().commit();
+        customerList.forEach(System.out::println);
     }
 }

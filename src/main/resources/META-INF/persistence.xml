@@ -11,11 +11,11 @@
         <class>com.IMCONSALTING.employee.Employee</class>
         <class>com.IMCONSALTING.customer.Customer</class>
         <!-- Converters -->
-        <class>com.IMCONSALTING.Convertors.DateConverter</class>
-        <class>com.IMCONSALTING.Convertors.EmpStatusConverer</class>
-        <class>com.IMCONSALTING.Convertors.ProfessionConverter</class>
-        <class>com.IMCONSALTING.Convertors.CompanyConverter</class>
-        <class>com.IMCONSALTING.Convertors.EmployeeConverter</class>
+        <class>com.IMCONSALTING.convertors.DateConverter</class>
+        <class>com.IMCONSALTING.convertors.EmpStatusConverer</class>
+        <class>com.IMCONSALTING.convertors.ProfessionConverter</class>
+        <class>com.IMCONSALTING.convertors.CompanyConverter</class>
+        <class>com.IMCONSALTING.convertors.EmployeeConverter</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/project?zeroDateTimeBehaviour=null"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>

@@ -5,23 +5,23 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Action implements Serializable {
-    private int id;
+    private int idAction;
     private LocalDate date;
-    private int id_customer;
-    private int id_employee;
-    private int id_channel;
-    private int id_response;
-    private String description;
+    private int idCustomer;
+    private int idEmployee;
+    private int idChannel;
+    private int idResponse;
+    private String descriptionName;
 
     public Action() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdAction() {
+        return idAction;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdAction(int idAction) {
+        this.idAction = idAction;
     }
 
     public LocalDate getDate() {
@@ -32,69 +32,56 @@ public class Action implements Serializable {
         this.date = date;
     }
 
-    public int getId_customer() {
-        return id_customer;
+    public int getIdCustomer() {
+        return idCustomer;
     }
 
-    public void setId_customer(int id_customer) {
-        this.id_customer = id_customer;
+    public void setIdCustomer(int idCustomer) {
+        this.idCustomer = idCustomer;
     }
 
-    public int getId_employee() {
-        return id_employee;
+    public int getIdEmployee() {
+        return idEmployee;
     }
 
-    public void setId_employee(int id_employee) {
-        this.id_employee = id_employee;
+    public void setIdEmployee(int idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
-    public int getId_channel() {
-        return id_channel;
+    public int getIdChannel() {
+        return idChannel;
     }
 
-    public void setId_channel(int id_channel) {
-        this.id_channel = id_channel;
+    public void setIdChannel(int idChannel) {
+        this.idChannel = idChannel;
     }
 
-    public int getId_response() {
-        return id_response;
+    public int getIdResponse() {
+        return idResponse;
     }
 
-    public void setId_response(int id_response) {
-        this.id_response = id_response;
+    public void setIdResponse(int idResponse) {
+        this.idResponse = idResponse;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescriptionName() {
+        return descriptionName;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Action action = (Action) o;
-        return id == action.id && id_customer == action.id_customer && id_employee == action.id_employee && id_channel == action.id_channel && id_response == action.id_response && Objects.equals(date, action.date) && Objects.equals(description, action.description);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, date, id_customer, id_employee, id_channel, id_response, description);
+    public void setDescriptionName(String descriptionName) {
+        this.descriptionName = descriptionName;
     }
 
     @Override
     public String toString() {
         return "Action{" +
-                "id=" + id +
+                "idAction=" + idAction +
                 ", date=" + date +
-                ", id_customer=" + id_customer +
-                ", id_employee=" + id_employee +
-                ", id_channel=" + id_channel +
-                ", id_response=" + id_response +
-                ", description='" + description + '\'' +
+                ", idCustomer=" + idCustomer +
+                ", idEmployee=" + idEmployee +
+                ", idChannel=" + idChannel +
+                ", idResponse=" + idResponse +
+                ", descriptionName='" + descriptionName + '\'' +
                 '}';
     }
 }

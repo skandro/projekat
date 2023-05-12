@@ -9,6 +9,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Demo {
@@ -56,5 +57,7 @@ public class Demo {
         List<Customer> customerList = customerListQuery.getResultList();
         manager.getTransaction().commit();
         customerList.forEach(System.out::println);
+
+
     }
 }

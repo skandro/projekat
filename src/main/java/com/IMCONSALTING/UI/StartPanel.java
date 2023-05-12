@@ -86,7 +86,6 @@ public class StartPanel extends JPanel {
         frame.setContentPane(employeePanel);
         frame.setLocationRelativeTo(null);
         frame.setSize(new Dimension(300, 300));
-
         frame.setVisible(true);
     }
 

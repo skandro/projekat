@@ -12,57 +12,45 @@ import java.util.Objects;
 @Table(name = "employees", catalog = "project")
 public class Employee implements Serializable {
     @Id
-    @Column(name = "id_employee")
-    private int id;
-    private String name;
-    private String surname;
+    @Column(name = "id")
+    private int idEmployee;
+    private String employeeName;
+    private String employeeSurname;
 
     public Employee() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdEmployee() {
+        return idEmployee;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdEmployee(int idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
-    public String getName() {
-        return name;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getEmployeeSurname() {
+        return employeeSurname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return id == employee.id && Objects.equals(name, employee.name) && Objects.equals(surname, employee.surname);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, surname);
+    public void setEmployeeSurname(String employeeSurname) {
+        this.employeeSurname = employeeSurname;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
+                "idEmployee=" + idEmployee +
+                ", employeeName='" + employeeName + '\'' +
+                ", employeeSurname='" + employeeSurname + '\'' +
                 '}';
     }
 }
+

@@ -11,67 +11,55 @@ import java.util.Objects;
 public class Company implements Serializable {
 
     @Id
-    @Column(name = "id_company")
-    private int id;
-    private String name;
-    private String address;
-    private String contact;
+    @Column(name = "id")
+    private int idCompany;
+    private String companyName;
+    private String companyAddress;
+    private String companyContact;
 
     public Company() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdCompany() {
+        return idCompany;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdCompany(int idCompany) {
+        this.idCompany = idCompany;
     }
 
-    public String getName() {
-        return name;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getCompanyAddress() {
+        return companyAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCompanyAddress(String companyAddress) {
+        this.companyAddress = companyAddress;
     }
 
-    public String getContact() {
-        return contact;
+    public String getCompanyContact() {
+        return companyContact;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Company company = (Company) o;
-        return id == company.id && Objects.equals(name, company.name) && Objects.equals(address, company.address) && Objects.equals(contact, company.contact);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, address, contact);
+    public void setCompanyContact(String companyContact) {
+        this.companyContact = companyContact;
     }
 
     @Override
     public String toString() {
         return "Company{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", contact='" + contact + '\'' +
+                "idCompany=" + idCompany +
+                ", companyName='" + companyName + '\'' +
+                ", companyAddress='" + companyAddress + '\'' +
+                ", companyContact='" + companyContact + '\'' +
                 '}';
     }
+
 }

@@ -8,16 +8,16 @@ public class EmployeeConverter implements AttributeConverter<Employee, Integer> 
 
     @Override
     public Integer convertToDatabaseColumn(Employee employee) {
-        Integer id_employee = employee.getId();
-        return id_employee;
+        Integer idEmployee = employee.getIdEmployee();
+        return idEmployee;
     }
 
     @Override
-    public Employee convertToEntityAttribute(Integer id_employee) {
+    public Employee convertToEntityAttribute(Integer id) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("projectPU");
         EntityManager manager = entityManagerFactory.createEntityManager();
         manager.getTransaction().begin();
-        Employee employee = manager.find(Employee.class, id_employee);
+        Employee employee = manager.find(Employee.class, id);
         manager.getTransaction().commit();
         return employee;
 

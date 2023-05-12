@@ -7,15 +7,20 @@
     <persistence-unit name="projectPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.IMCONSALTING.company.Company</class>
-        <class>com.IMCONSALTING.profession.Profession</class>
         <class>com.IMCONSALTING.employee.Employee</class>
+        <class>com.IMCONSALTING.empstatus.EmpStatus</class>
+        <class>com.IMCONSALTING.profession.Profession</class>
+        <class>com.IMCONSALTING.channel.Channel</class>
         <class>com.IMCONSALTING.customer.Customer</class>
+        <class>com.IMCONSALTING.response.Response</class>
+        <class>com.IMCONSALTING.action.Action</class>
+
         <!-- Converters -->
-        <class>com.IMCONSALTING.convertors.DateConverter</class>
-        <class>com.IMCONSALTING.convertors.EmpStatusConverer</class>
-        <class>com.IMCONSALTING.convertors.ProfessionConverter</class>
         <class>com.IMCONSALTING.convertors.CompanyConverter</class>
+        <class>com.IMCONSALTING.convertors.DateConverter</class>
         <class>com.IMCONSALTING.convertors.EmployeeConverter</class>
+        <class>com.IMCONSALTING.convertors.ProfessionConverter</class>
+
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/project?zeroDateTimeBehaviour=null"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>

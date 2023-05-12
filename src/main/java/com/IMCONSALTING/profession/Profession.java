@@ -12,47 +12,34 @@ import java.util.Objects;
 @Table(name = "profession", catalog = "project")
 public class Profession implements Serializable {
     @Id
-    @Column(name = "id_profession")
-    private int id;
-    private String name;
+    @Column(name = "id")
+    private int idProfession;
+    private String professionName;
 
     public Profession() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdProfession() {
+        return idProfession;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdProfession(int idProfession) {
+        this.idProfession = idProfession;
     }
 
-    public String getName() {
-        return name;
+    public String getProfessionName() {
+        return professionName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Profession that = (Profession) o;
-        return id == that.id && Objects.equals(name, that.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
+    public void setProfessionName(String professionName) {
+        this.professionName = professionName;
     }
 
     @Override
     public String toString() {
         return "Profession{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "idProfession=" + idProfession +
+                ", professionName='" + professionName + '\'' +
                 '}';
     }
 }

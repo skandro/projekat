@@ -8,18 +8,18 @@ public class CompanyConverter implements AttributeConverter<Company, Integer> {
 
     @Override
     public Integer convertToDatabaseColumn(Company company) {
-        Integer id_company = company.getId();
-        return id_company;
+        Integer idCompany = company.getIdCompany();
+        return idCompany;
     }
 
     @Override
-    public Company convertToEntityAttribute(Integer id_company) {
+    public Company convertToEntityAttribute(Integer id) {
 
-        if (id_company == null) return null;
+        if (id == null) return null;
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("projectPU");
         EntityManager manager = entityManagerFactory.createEntityManager();
         manager.getTransaction().begin();
-        Company company = manager.find(Company.class, id_company);
+        Company company = manager.find(Company.class, id);
         manager.getTransaction().commit();
         return company;
 

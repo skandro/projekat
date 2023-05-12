@@ -4,26 +4,26 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class EmpStatus implements Serializable {
-    private int idEmpStatus;
-    private String name;
+    private int idEmpstatus;
+    private String empstatusName;
 
     public EmpStatus() {
     }
 
     public int getIdEmpStatus() {
-        return idEmpStatus;
+        return idEmpstatus;
     }
 
     public void setIdEmpStatus(int idEmpStatus) {
-        this.idEmpStatus = idEmpStatus;
+        this.idEmpstatus = idEmpStatus;
     }
 
     public String getName() {
-        return name;
+        return empstatusName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.empstatusName = name;
     }
 
     @Override
@@ -31,19 +31,19 @@ public class EmpStatus implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EmpStatus empStatus = (EmpStatus) o;
-        return idEmpStatus == empStatus.idEmpStatus && name.equals(empStatus.name);
+        return idEmpstatus == empStatus.idEmpstatus && empstatusName.equals(empStatus.empstatusName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idEmpStatus, name);
+        return Objects.hash(idEmpstatus, empstatusName);
     }
 
     @Override
     public String toString() {
         return "EmpStatus{" +
-                "idEmpStatus=" + idEmpStatus +
-                ", name='" + name + '\'' +
+                "idEmpStatus=" + idEmpstatus +
+                ", name='" + empstatusName + '\'' +
                 '}';
     }
 }

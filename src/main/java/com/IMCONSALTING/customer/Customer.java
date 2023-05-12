@@ -15,115 +15,148 @@ import java.util.Objects;
 @Table(name = "customers", catalog = "project")
 public class Customer implements Serializable {
     @Id
-    @Column(name = "id_customer")
+    @Column(name = "id")
     @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idCustomer;
 
     @Basic(optional = false)
-    private String name;
+    private String customerName;
 
     @Basic(optional = false)
-    private String surname;
+    private String customerSurname;
 
-    @Convert(converter = DateConverter.class)
-    @Basic(optional = false)
-    @Column(name = "birthday")
-    private LocalDate birthday;
-
-    @Basic(optional = false)
-    private String address;
+    @Convert(converter = DateConverter.class, disableConversion = false)
+    @Column(name = "birthday", nullable = false)
+//    @Basic(optional = false)
+//    @Column(name = "birthday")
+    private LocalDate customerBirthday;
 
     @Basic(optional = false)
-    private String email;
+    private String customerAddress;
 
     @Basic(optional = false)
-    private String mobile;
+    private String customerEmail;
 
     @Basic(optional = false)
-    @Convert(converter = EmpStatusConverter.class)
-    @Column(name = "id_empstatus")
-    private EmpStatus empStatus;
+    private String customerMobile;
+
+    @Basic(optional = false)
+    @Column(name = "id")
+    private EmpStatus customerEmpStatus;
 
     @Basic(optional = false)
     @Convert(converter = ProfessionConverter.class)
-    @Column(name = "id_profession")
-    private Profession profession;
+    @Column(name = "id")
+    private Profession customerProfession;
 
     @Convert(converter = CompanyConverter.class)
-    @Column(name = "id_company")
-    private Company company;
+    @Column(name = "id")
+    private Company customerCompany;
 
     @Basic(optional = false)
     @Convert(converter = EmployeeConverter.class)
-    @Column(name = "id_employee")
-    private Employee employee;
+    @Column(name = "id")
+    private Employee customerEmployee;
 
-    @Basic(optional = false)
-    @Convert(converter = DateConverter.class)
-    @Column(name = "date_registry")
+    @Convert(converter = DateConverter.class, disableConversion = false)
+    @Column(name = "date_registry", nullable = false)
+//  @Basic(optional = false)
+//  @Column(name = "birthday")
+//  @Temporal(TemporalType.DATE)
     private LocalDate dateRegistry;
 
     public Customer() {
 
     }
 
-    public int getId() {
-        return id;
+    public int getIdCustomer() {
+        return idCustomer;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdCustomer(int idCustomer) {
+        this.idCustomer = idCustomer;
     }
 
-    public String getName() {
-        return name;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getCustomerSurname() {
+        return customerSurname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setCustomerSurname(String customerSurname) {
+        this.customerSurname = customerSurname;
     }
 
-    public LocalDate getBirthday() {
-        return birthday;
+    public LocalDate getCustomerBirthday() {
+        return customerBirthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
+    public void setCustomerBirthday(LocalDate customerBirthday) {
+        this.customerBirthday = customerBirthday;
     }
 
-    public String getAddress() {
-        return address;
+    public String getCustomerAddress() {
+        return customerAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCustomerAddress(String customerAddress) {
+        this.customerAddress = customerAddress;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCustomerEmail() {
+        return customerEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCustomerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
     }
 
-    public String getMobile() {
-        return mobile;
+    public String getCustomerMobile() {
+        return customerMobile;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setCustomerMobile(String customerMobile) {
+        this.customerMobile = customerMobile;
     }
 
+    public EmpStatus getCustomerEmpStatus() {
+        return customerEmpStatus;
+    }
+
+    public void setCustomerEmpStatus(EmpStatus customerEmpStatus) {
+        this.customerEmpStatus = customerEmpStatus;
+    }
+
+    public Profession getCustomerProfession() {
+        return customerProfession;
+    }
+
+    public void setCustomerProfession(Profession customerProfession) {
+        this.customerProfession = customerProfession;
+    }
+
+    public Company getCustomerCompany() {
+        return customerCompany;
+    }
+
+    public void setCustomerCompany(Company customerCompany) {
+        this.customerCompany = customerCompany;
+    }
+
+    public Employee getCustomerEmployee() {
+        return customerEmployee;
+    }
+
+    public void setCustomerEmployee(Employee customerEmployee) {
+        this.customerEmployee = customerEmployee;
+    }
 
     public LocalDate getDateRegistry() {
         return dateRegistry;
@@ -133,66 +166,22 @@ public class Customer implements Serializable {
         this.dateRegistry = dateRegistry;
     }
 
-    public EmpStatus getEmpStatus() {
-        return empStatus;
-    }
-
-    public void setEmpStatus(EmpStatus empStatus) {
-        this.empStatus = empStatus;
-    }
-
-    public Profession getProfession() {
-        return profession;
-    }
-
-    public void setProfession(Profession profession) {
-        this.profession = profession;
-    }
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Customer customer = (Customer) o;
-        return id == customer.id && Objects.equals(name, customer.name) && Objects.equals(surname, customer.surname) && Objects.equals(birthday, customer.birthday) && Objects.equals(address, customer.address) && Objects.equals(email, customer.email) && Objects.equals(mobile, customer.mobile) && Objects.equals(empStatus, customer.empStatus) && Objects.equals(profession, customer.profession) && Objects.equals(company, customer.company) && Objects.equals(employee, customer.employee) && Objects.equals(dateRegistry, customer.dateRegistry);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, surname, birthday, address, email, mobile, empStatus, profession, company, employee, dateRegistry);
-    }
-
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birthday=" + birthday +
-                ", address='" + address + '\'' +
-                ", email='" + email + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", empStatus=" + empStatus +
-                ", profession=" + profession +
-                ", company=" + company +
-                ", employee=" + employee +
+                "idCustomer=" + idCustomer +
+                ", customerName='" + customerName + '\'' +
+                ", customerSurname='" + customerSurname + '\'' +
+                ", customerBirthday=" + customerBirthday +
+                ", customerAddress='" + customerAddress + '\'' +
+                ", customerEmail='" + customerEmail + '\'' +
+                ", customerMobile='" + customerMobile + '\'' +
+                ", customerEmpStatus=" + customerEmpStatus +
+                ", customerProfession=" + customerProfession +
+                ", customerCompany=" + customerCompany +
+                ", customerEmployee=" + customerEmployee +
                 ", dateRegistry=" + dateRegistry +
                 '}';
     }
 }
+

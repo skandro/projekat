@@ -1,49 +1,44 @@
 package com.IMCONSALTING.channel;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Table(name = "channels", catalog = "project")
 public class Channel implements Serializable {
-    private int id;
-    private String name;
+    @Id
+    @Column(name = "id")
+    private int idProfession;
+    private String professionName;
 
     public Channel() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdProfession() {
+        return idProfession;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdProfession(int idProfession) {
+        this.idProfession = idProfession;
     }
 
-    public String getName() {
-        return name;
+    public String getNameProfession() {
+        return professionName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Channel channel = (Channel) o;
-        return id == channel.id && Objects.equals(name, channel.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
+    public void setNameProfession(String nameProfession) {
+        this.professionName = nameProfession;
     }
 
     @Override
     public String toString() {
         return "Channel{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "idProfession=" + idProfession +
+                ", nameProfession='" + professionName + '\'' +
                 '}';
     }
 }

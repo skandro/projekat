@@ -9,8 +9,8 @@ public class ProfessionConverter implements AttributeConverter<Profession, Integ
 
     @Override
     public Integer convertToDatabaseColumn(Profession profession) {
-        Integer id_profession = profession.getId();
-        return id_profession;
+        Integer idProfession = profession.getIdProfession();
+        return idProfession;
     }
 
     @Override

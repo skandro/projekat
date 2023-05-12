@@ -47,11 +47,11 @@ public class EmployeePanel extends JPanel {
         public Object getColumValue(int index) {
             switch (index) {
                 case 0:
-                    return employee.getId();
+                    return employee.getIdEmployee();
                 case 1:
-                    return employee.getName();
+                    return employee.getEmployeeName();
                 case 2:
-                    return employee.getSurname();
+                    return employee.getEmployeeSurname();
             }
             return null;
         }
@@ -84,9 +84,9 @@ public class EmployeePanel extends JPanel {
             Employee employee = employeeList.get(rowIndex);
             //EmployeeWrapper employeeWrapper = new EmployeeWrapper(employee);
             //Object employeeFieldOnIndex = employeeWrapper.getColumValue(columnIndex);
-            if (columnIndex == 0) return employee.getId();
-            if (columnIndex == 1) return employee.getName();
-            if (columnIndex == 2) return employee.getSurname();
+            if (columnIndex == 0) return employee.getIdEmployee();
+            if (columnIndex == 1) return employee.getEmployeeName();
+            if (columnIndex == 2) return employee.getEmployeeSurname();
             return employee;
         }
 

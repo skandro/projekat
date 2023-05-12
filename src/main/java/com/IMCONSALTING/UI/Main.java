@@ -17,13 +17,10 @@ public class Main {
         JFrame frame = new JFrame();
         frame.setTitle("Project");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(new Dimension(400, 400));
+        frame.setSize(new Dimension(500, 500));
         StartPanel startPanel = new StartPanel();
         frame.setContentPane(startPanel);
         frame.setLocationRelativeTo(null);
-
         frame.setVisible(true);
-
-
     }
 }

@@ -1,27 +1,56 @@
 package com.IMCONSALTING.action;
 
+import com.IMCONSALTING.channel.Channel;
+import com.IMCONSALTING.customer.Customer;
+import com.IMCONSALTING.employee.Employee;
+import com.IMCONSALTING.response.Response;
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Currency;
 import java.util.Objects;
 
+@Entity
+@Table(name = "actions", catalog = "project")
 public class Action implements Serializable {
-    private int idAction;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    private int id;
+
+    @Basic(optional = false)
     private LocalDate date;
-    private int idCustomer;
-    private int idEmployee;
-    private int idChannel;
-    private int idResponse;
-    private String descriptionName;
+
+    @Basic(optional = false)
+    @Column(name = "id_customer")
+    private Customer customer;
+
+    @Basic(optional = false)
+    @Column(name = "id_employee")
+    private Employee employee;
+
+    @Basic(optional = false)
+    @Column(name = "id_channel")
+    private Channel channel;
+
+    @Basic(optional = false)
+    @Column(name = "id_response")
+    private Response response;
+
+    @Basic(optional = false)
+    private String description;
 
     public Action() {
     }
 
-    public int getIdAction() {
-        return idAction;
+    public int getId() {
+        return id;
     }
 
-    public void setIdAction(int idAction) {
-        this.idAction = idAction;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public LocalDate getDate() {
@@ -32,56 +61,69 @@ public class Action implements Serializable {
         this.date = date;
     }
 
-    public int getIdCustomer() {
-        return idCustomer;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setIdCustomer(int idCustomer) {
-        this.idCustomer = idCustomer;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public int getIdEmployee() {
-        return idEmployee;
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setIdEmployee(int idEmployee) {
-        this.idEmployee = idEmployee;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
-    public int getIdChannel() {
-        return idChannel;
+    public Channel getChannel() {
+        return channel;
     }
 
-    public void setIdChannel(int idChannel) {
-        this.idChannel = idChannel;
+    public void setChannel(Channel channel) {
+        this.channel = channel;
     }
 
-    public int getIdResponse() {
-        return idResponse;
+    public Response getResponse() {
+        return response;
     }
 
-    public void setIdResponse(int idResponse) {
-        this.idResponse = idResponse;
+    public void setResponse(Response response) {
+        this.response = response;
     }
 
-    public String getDescriptionName() {
-        return descriptionName;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescriptionName(String descriptionName) {
-        this.descriptionName = descriptionName;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Action action = (Action) o;
+        return id == action.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "Action{" +
-                "idAction=" + idAction +
+                "id=" + id +
                 ", date=" + date +
-                ", idCustomer=" + idCustomer +
-                ", idEmployee=" + idEmployee +
-                ", idChannel=" + idChannel +
-                ", idResponse=" + idResponse +
-                ", descriptionName='" + descriptionName + '\'' +
+                ", customer=" + customer +
+                ", employee=" + employee +
+                ", channel=" + channel +
+                ", response=" + response +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

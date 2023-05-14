@@ -4,28 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b28e4a-0e22-4f07-b403-11d45bfb8bce" name="Changes" comment="5 verzija">
+    <list default="true" id="a7b28e4a-0e22-4f07-b403-11d45bfb8bce" name="Changes" comment="6 verzija">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/employee/EmployeeWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/UI/EmployeePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/UI/EmployeePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/UI/EmployeePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/employee/EmployeePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/UI/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/UI/StartPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/UI/StartPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/action/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/action/Action.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/channel/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/channel/Channel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/channel/Channel1.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/company/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/company/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/CompanyConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/CompanyConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/EmpStatusConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/EmployeeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/EmployeeConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/ProfessionConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/ProfessionConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/CompanyConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/DateConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/EmployeeConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/convertors/ProfessionConverter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/customer/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/employee/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/empstatus/EmpStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/empstatus/EmpStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/empstatus/EmpStatus1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/hibernate/SessionFactoryUtil.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/profession/Profession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/profession/Profession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/response/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IMCONSALTING/response/Response1.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/entity/Company.hbm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/entity/Customer.hbm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/entity/Employee.hbm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/entity/Profession.hbm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +66,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Miko/Desktop/PROJEKAT&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Miko/Desktop/hotelManagement-master&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -98,7 +105,7 @@
       <module name="PROJEKAT" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.IMCONSALTING.UI.*" />
+          <option name="PATTERN" value="com.IMCONSALTING.employee.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683819431524</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="6 verzija">
+      <created>1683906263384</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683906263384</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +198,7 @@
     <MESSAGE value="Treca verzija" />
     <MESSAGE value="4 verzija" />
     <MESSAGE value="5 verzija" />
-    <option name="LAST_COMMIT_MESSAGE" value="5 verzija" />
+    <MESSAGE value="6 verzija" />
+    <option name="LAST_COMMIT_MESSAGE" value="6 verzija" />
   </component>
 </project>

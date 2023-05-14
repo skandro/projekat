@@ -1,44 +1,59 @@
 package com.IMCONSALTING.channel;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 @Table(name = "channels", catalog = "project")
 public class Channel implements Serializable {
     @Id
     @Column(name = "id")
-    private int idProfession;
-    private String professionName;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    private int id;
+
+    @Basic(optional = false)
+    private String name;
 
     public Channel() {
     }
 
-    public int getIdProfession() {
-        return idProfession;
+    public int getI() {
+        return id;
     }
 
-    public void setIdProfession(int idProfession) {
-        this.idProfession = idProfession;
+    public void setIdProfession(int id) {
+        this.id = id;
     }
 
-    public String getNameProfession() {
-        return professionName;
+    public String getName() {
+        return name;
     }
 
-    public void setNameProfession(String nameProfession) {
-        this.professionName = nameProfession;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Channel channel = (Channel) o;
+        return id == channel.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "Channel{" +
-                "idProfession=" + idProfession +
-                ", nameProfession='" + professionName + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

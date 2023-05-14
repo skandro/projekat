@@ -1,45 +1,61 @@
 package com.IMCONSALTING.response;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 @Table(name = "responses", catalog = "project")
 public class Response implements Serializable {
 
     @Id
     @Column(name = "id")
-    private int idResponse;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    private int id;
 
-    private String responseName;
+    @Column(name = "name")
+    @Basic(optional = false)
+    private String name;
 
     public Response() {
     }
 
     public int getId() {
-        return idResponse;
+        return id;
     }
 
     public void setId(int id) {
-        this.idResponse = id;
+        this.id = id;
     }
 
-    public String getResponseName() {
-        return responseName;
+    public String getName() {
+        return name;
     }
 
-    public void setResponseName(String responseName) {
-        this.responseName = responseName;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Response response = (Response) o;
+        return id == response.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "Response{" +
-                "id=" + idResponse +
-                ", responseName='" + responseName + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

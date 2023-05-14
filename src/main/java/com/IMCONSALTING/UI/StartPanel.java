@@ -1,5 +1,7 @@
 package com.IMCONSALTING.UI;
 
+import com.IMCONSALTING.employee.EmployeePanel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -85,8 +87,9 @@ public class StartPanel extends JPanel {
         EmployeePanel employeePanel = new EmployeePanel();
         frame.setContentPane(employeePanel);
         frame.setLocationRelativeTo(null);
-        frame.setSize(new Dimension(300, 300));
+        frame.pack();
         frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
     }
 
 }

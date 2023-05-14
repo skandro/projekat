@@ -1,9 +1,6 @@
 package com.IMCONSALTING.employee;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -13,44 +10,62 @@ import java.util.Objects;
 public class Employee implements Serializable {
     @Id
     @Column(name = "id")
-    private int idEmployee;
-    private String employeeName;
-    private String employeeSurname;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    private int id;
+
+    @Basic(optional = false)
+    private String name;
+
+    @Basic(optional = false)
+    private String surname;
 
     public Employee() {
     }
 
-    public int getIdEmployee() {
-        return idEmployee;
+    public int getId() {
+        return id;
     }
 
-    public void setIdEmployee(int idEmployee) {
-        this.idEmployee = idEmployee;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public String getName() {
+        return name;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEmployeeSurname() {
-        return employeeSurname;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setEmployeeSurname(String employeeSurname) {
-        this.employeeSurname = employeeSurname;
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "idEmployee=" + idEmployee +
-                ", employeeName='" + employeeName + '\'' +
-                ", employeeSurname='" + employeeSurname + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
                 '}';
     }
 }
-

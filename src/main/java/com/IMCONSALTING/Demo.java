@@ -52,11 +52,11 @@ public class Demo {
         manager.getTransaction().commit();
         employeeList.forEach(System.out::println);
 
-        manager.getTransaction().begin();
+        /*manager.getTransaction().begin();
         Query customerListQuery = manager.createQuery("SELECT c FROM Customer c");
         List<Customer> customerList = customerListQuery.getResultList();
         manager.getTransaction().commit();
-        customerList.forEach(System.out::println);
+        customerList.forEach(System.out::println);*/
 
 
     }

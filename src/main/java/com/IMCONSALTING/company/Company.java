@@ -12,54 +12,74 @@ public class Company implements Serializable {
 
     @Id
     @Column(name = "id")
-    private int idCompany;
-    private String companyName;
-    private String companyAddress;
-    private String companyContact;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    private int id;
+
+    @Basic(optional = false)
+    private String name;
+
+    @Basic(optional = false)
+    private String address;
+
+    @Basic(optional = false)
+    private String contact;
 
     public Company() {
     }
 
-    public int getIdCompany() {
-        return idCompany;
+    public int getId() {
+        return id;
     }
 
-    public void setIdCompany(int idCompany) {
-        this.idCompany = idCompany;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getName() {
+        return name;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCompanyAddress() {
-        return companyAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setCompanyAddress(String companyAddress) {
-        this.companyAddress = companyAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getCompanyContact() {
-        return companyContact;
+    public String getContact() {
+        return contact;
     }
 
-    public void setCompanyContact(String companyContact) {
-        this.companyContact = companyContact;
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Company company = (Company) o;
+        return id == company.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "Company{" +
-                "idCompany=" + idCompany +
-                ", companyName='" + companyName + '\'' +
-                ", companyAddress='" + companyAddress + '\'' +
-                ", companyContact='" + companyContact + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", contact='" + contact + '\'' +
                 '}';
     }
-
 }

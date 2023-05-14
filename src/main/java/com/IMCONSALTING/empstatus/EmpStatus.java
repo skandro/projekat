@@ -1,29 +1,38 @@
 package com.IMCONSALTING.empstatus;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "emp_status", catalog = "project")
 public class EmpStatus implements Serializable {
-    private int idEmpstatus;
-    private String empstatusName;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    private int id;
+    @Basic(optional = false)
+    private String name;
 
     public EmpStatus() {
     }
 
-    public int getIdEmpStatus() {
-        return idEmpstatus;
+    public int getId() {
+        return id;
     }
 
-    public void setIdEmpStatus(int idEmpStatus) {
-        this.idEmpstatus = idEmpStatus;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
-        return empstatusName;
+        return name;
     }
 
     public void setName(String name) {
-        this.empstatusName = name;
+        this.name = name;
     }
 
     @Override
@@ -31,19 +40,19 @@ public class EmpStatus implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EmpStatus empStatus = (EmpStatus) o;
-        return idEmpstatus == empStatus.idEmpstatus && empstatusName.equals(empStatus.empstatusName);
+        return id == empStatus.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idEmpstatus, empstatusName);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "EmpStatus{" +
-                "idEmpStatus=" + idEmpstatus +
-                ", name='" + empstatusName + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
